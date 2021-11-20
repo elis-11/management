@@ -1,22 +1,36 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
-import { GrEdit } from 'react-icons/gr'
-import { RiDeleteBin6Line } from 'react-icons/ri'
+import { GrEdit } from 'react-icons/gr';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 function App() {
 	const [ users, setUsers ] = useState([]);
 
+	const backendUrl = 'http://localhost:3022';
+
+	const loadUsers = async () => {
+		const response = await fetch(backendUrl);
+		const users = await response.json();
+		setUsers(users);
+	};
+
 	useEffect(() => {
-		(async () => {
-			const response = await fetch('http://localhost:3022');
-			const users = await response.json();
-			setUsers(users);
-		})();
-	}, []);
+		loadUsers();
+	});
+
+	const handleDeleteButton = async (user) => {
+		await fetch(`${backendUrl}/deleteuser/${user._id}`, {
+			method: 'DELETE'
+		});
+		loadUsers();
+	};
 
 	return (
 		<div className="App">
 			<h1>User Management App</h1>
+			<div className="topRow">
+				<button>Add User</button>
+			</div>
 			<section className="users">
 				{users.map((user, index) => {
 					return (
@@ -34,7 +48,7 @@ function App() {
 								<div className="data">{user.email}</div>
 							</div>
 							<div className="iconRow">
-								<button className="icon">
+								<button onClick={() => handleDeleteButton(user)} className="icon">
 									<RiDeleteBin6Line />
 								</button>
 								<button className="icon">
