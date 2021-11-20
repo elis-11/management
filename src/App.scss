@@ -47,4 +47,30 @@
   .topRow{
     margin: 0 0 20px 0;
   }
+  .addUserFormArea {
+    background-color: #ccc;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    width: 325px;
+    label {
+        font-size: 1.3rem;
+        width: 110px;
+        display: inline-block;
+    }
+    input {
+        width: 200px;
+    }
+    .formButtonArea {
+        margin: 10px 3px 0 0;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            background-color: #ddd;
+            font-size: 0.9rem;
+            margin: 0 5px 0 0;
+        }
+    }
+}
 }
