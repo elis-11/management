@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  // text-align: center;
 
 .logo {
   height: 40vmin;
@@ -19,6 +19,30 @@
 
 .link {
   color: #61dafb;
+}
+div.userCard {
+  background-color: #eee;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  font-size: 1.3rem;
+  .row {
+      display:flex;
+      .data {
+          margin: 0 0 0 10px;
+          font-family: 'Courier New', Courier, monospace;
+          color: brown;
+      }
+  }
+  div.iconRow {
+    margin: 5px 0 0 0;
+    display: flex;
+    button {
+        margin: 0 5px 0 0;
+        background-color: #ccc;
+        width: 30px;
+        padding: 6px 0 3px 0;
+    }
+}
 }
 
 }
