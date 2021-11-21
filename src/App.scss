@@ -24,6 +24,11 @@ body {
 			list-style-type: disc;
 			margin: 0 0 0 30px;
 		}
+		.buttonArea {
+			background-color: #f3f3f3;
+			padding: 10px;
+			border-radius: 5px;
+		}
 	}
 	div.userCard {
 		background-color: #eee;
@@ -32,6 +37,7 @@ body {
 		font-size: 1.3rem;
 		.row {
 			display: flex;
+			margin: 0 0 3px 0;
 			.data {
 				margin: 0 0 0 10px;
 				font-family: "Courier New", Courier, monospace;
@@ -48,8 +54,47 @@ body {
 				padding: 6px 0 3px 0;
 			}
 		}
+		div.editing {
+			input {
+				width: 220px;
+			}
+			button {
+				margin: 0 0 0 5px;
+			}
+		}
 	}
-	.topRow {
-		margin: 0 0 20px 0;
+
+	div.addUserArea {
+		margin: 0 0 10px 0;
+	}
+	.addUserFormArea {
+		background-color: #ccc;
+		margin: 10px 0 0 0;
+		padding: 10px;
+		border: 1px solid #999;
+		border-radius: 5px;
+		width: 325px;
+		label {
+			font-size: 1.3rem;
+			width: 110px;
+			display: inline-block;
+		}
+		input {
+			width: 200px;
+		}
+		.formButtonArea {
+			margin: 10px 3px 0 0;
+			display: flex;
+			justify-content: flex-end;
+			button {
+				background-color: #ddd;
+				font-size: 0.9rem;
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+	.topInfoRow {
+		display: flex;
+		justify-content: space-between;
 	}
 }
