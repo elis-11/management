@@ -107,11 +107,11 @@ const handleFormEmail = (e) => {
 	return (
 		<div className="App">
 			<h1>User Management App</h1>
-			<div className="topRow">
 			<div className="addUserArea">
-					<div>
-						<button onClick={handleToggleAddUserArea}>Add User</button>
-					</div>
+				<div className="topInfoRow">
+					<button onClick={handleToggleAddUserArea}>Add User</button>
+					<div className="totalInfo">Total: {users.length} users</div>
+				</div>
 					{isAddingUser && (
 						<div className="addUserFormArea">
 							<form>
@@ -142,8 +142,6 @@ const handleFormEmail = (e) => {
 							</form>
 						</div>
 					)}
-				</div>
-
 			</div>
 			<section className="users">
 				{users.map((user, index) => {
